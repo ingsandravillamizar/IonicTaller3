@@ -1,0 +1,28 @@
+<ion-row>
+  <ion-col size = "12" size-md="4" *ngFor="let item of listaRec1; let index"> 
+    <ion-card>
+      <ion-card-header>
+       <ion-card-subtitle>Email: {{item.email}}</ion-card-subtitle>
+       <ion-card-title>Nombre: {{item.name}} </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        
+        <ion-img  src ="https://source.unsplash.com/random"></ion-img> 
+        <!-- <ion-img  [src] ="'https://picsum.photos/80/80?random=' + index"></ion-img> -->
+    
+       <ion-list lines="inset">
+         <ion-item>
+           <ion-label><strong>Usuario</strong></ion-label>
+           <ion-label>{{item.user}}</ion-label>
+         </ion-item>
+         <ion-item>
+           <ion-label><strong>Password</strong></ion-label>
+           <ion-label>{{item.password}}</ion-label>
+         </ion-item>
+       
+       </ion-list> 
+      </ion-card-content>
+     </ion-card>
+  </ion-col>
+  
+</ion-row>

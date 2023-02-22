@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <form (ngSubmit)="onSubmit()" #form="ngForm">
+         
+
+            <ion-item>
+              <ion-label position="floating">Nombre <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input required name="forTitulo" #newNombre="ngModel" [(ngModel)]="registro.name" type="text" minlength= 3 maxlength= 15></ion-input>
+    
+                  <!-- <ion-note slot="error"  *ngIf="newTitulo.touched">
+                    <span *ngIf="newTitulo.errors?.['required']">Es Requerido</span>
+                    <span *ngIf="newTitulo.errors?.['minlength']">Mínimo 3 carácteres</span>
+                    <span *ngIf="newTitulo.errors?.['maxlength']">Máximo 15 carácteres</span>
+                  </ion-note> -->
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating" >Email </ion-label>
+              <ion-input email  required   name="forCorreo" #newCorreo="ngModel"   [(ngModel)]="registro.email" type="email" ></ion-input>
+              <!-- <ion-note slot="error"  *ngIf="newCorreo.touched">
+               <span *ngIf="newCorreo.errors?.['required']">El correo es obligatorio</span>
+               <span *ngIf="newCorreo.errors?.['email']">El correo es Invalido</span>
+              </ion-note> -->
+            </ion-item>
+
+
+             <ion-item>
+              <ion-label position="floating">Username <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input required name="user" #newUser="ngModel" [(ngModel)]="registro.user" type="text" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+              <ion-input required name="password" #newpassword="ngModel" [(ngModel)]="registro.password" type="password" ></ion-input>
+            </ion-item>
+
+
+
+            <ion-button [disabled]="!form.valid" type="submit" expand="block" fill="clear" shape="round">
+              Guardar
+             </ion-button>
+  
+          </form>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+ 
+</ion-content>

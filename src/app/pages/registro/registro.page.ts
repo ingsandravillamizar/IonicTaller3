@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -15,7 +16,7 @@ export class RegistroPage implements OnInit {
   ngEmail:string = "";
 
   registro:Usuario;
-  constructor(private mUserService:UsuarioService, private router:Router) 
+  constructor(private mUserService:UsuarioService, private router:Router              ) 
   {
     this.registro = new Usuario;
   }
@@ -23,11 +24,14 @@ export class RegistroPage implements OnInit {
   ngOnInit() {
   }
 
+
+
   onSubmit( ){
  
     console.log(this.registro);
-    this.mUserService.newUser = ( this.registro ); 
-    console.log( "guardo", this.mUserService.newUser)
+    //this.mUserService.newUser = ( this.registro );  asignacio directa
+    this.mUserService.registro (this.registro); //aprovechando el servicio   de usuario   opcion registro
+    //console.log( "guardo", this.mUserService.newUser)
     this.router.navigateByUrl('/login')
 
   }

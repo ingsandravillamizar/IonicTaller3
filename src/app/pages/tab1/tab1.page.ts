@@ -1,4 +1,5 @@
 import { Component , OnInit } from '@angular/core';
+ 
 import { Usuario } from 'src/app/models/usuario';
 import { Serviceorigentab } from 'src/app/services/serviceorigentab.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -15,7 +16,8 @@ export class Tab1Page implements OnInit  {
  
   User1 :Array<Usuario> = [];
 
-  constructor(private mservice:Serviceorigentab, public mUserService:UsuarioService) {
+  constructor(private mservice:Serviceorigentab, 
+              private mUserService:UsuarioService) {
 
     
   }
@@ -33,7 +35,7 @@ export class Tab1Page implements OnInit  {
     console.log("Viene de " + this.mservice.origentab);
     console.log ( this.mUserService);
     //console.log ( "...", this.mUserService.newUser); 
-    this.User1.length = 0;
+    this.User1 = [];
     console.log(this.User1.length  );
     this.User1.push (this.mUserService.newUser) ;
  
